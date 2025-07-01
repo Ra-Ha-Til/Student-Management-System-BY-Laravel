@@ -31,7 +31,8 @@ class Student extends Model
     protected $fillable = [
         'name',
         'address',
-        'phone', // Changed from 'mobile' to match your schema
+        'mobile',
+        'age', // Changed from 'mobile' to match your schema
     ];
 
     /**

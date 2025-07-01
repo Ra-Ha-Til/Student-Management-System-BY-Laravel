@@ -8,7 +8,7 @@
         </div>
 
         <div class="card-body">
-            <a href="{{ url('/student/create') }}" class="btn btn-success btn-sm" title="Add New Student">
+            <a href="{{ url('/students/create') }}" class="btn btn-success btn-sm" title="Add New Student">
                 <i class="fa fa-plus" aria-hidden="true"></i> Add New
             </a>
             <br />
@@ -26,39 +26,39 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($students as $item)
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $item->name }}</td>
-                                <td>{{ $item->address }}</td>
-                                <td>{{ $item->mobile }}</td>
-                                <td>
-                                    <a href="{{ url('/student/' . $item->id) }}" title="View Student">
-                                        <button class="btn btn-info btn-sm">
-                                            <i class="fa fa-eye" aria-hidden="true"></i> View
-                                        </button>
-                                    </a>
+                        @if ($students->count() > 0)
+                            @foreach ($students as $item)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $item->name }}</td>
+                                    <td>{{ $item->address }}</td>
+                                    <td>{{ $item->mobile ?? 'N/A' }}</td>
+                                    <td>
+                                        <a href="{{ url('/students/' . $item->id) }}" title="View Student">
+                                            <button class="btn btn-info btn-sm">
+                                                <i class="fa fa-eye" aria-hidden="true"></i> View
+                                            </button>
+                                        </a>
 
-                                    <a href="{{ url('/student/' . $item->id . '/edit') }}" title="Edit Student">
-                                        <button class="btn btn-primary btn-sm">
-                                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
-                                        </button>
-                                    </a>
+                                        <a href="{{ url('/students/' . $item->id . '/edit') }}" title="Edit Student">
+                                            <button class="btn btn-primary btn-sm">
+                                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+                                            </button>
+                                        </a>
 
-                                    <form method="POST" action="{{ url('/student/' . $item->id) }}" accept-charset="UTF-8"
-                                        style="display:inline"
-                                        onsubmit="return confirm('Are you sure you want to delete this student?');">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm" title="Delete Student">
-                                            <i class="fa fa-trash-o" aria-hidden="true"></i> Delete
-                                        </button>
-                                    </form>
-                                </td>
-                            </tr>
-                        @endforeach
-
-                        @if ($students->isEmpty())
+                                        <form method="POST" action="{{ url('/students/' . $item->id) }}" accept-charset="UTF-8"
+                                            style="display:inline"
+                                            onsubmit="return confirm('Are you sure you want to delete this student?');">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm" title="Delete Student">
+                                                <i class="fa fa-trash-o" aria-hidden="true"></i> Delete
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        @else
                             <tr>
                                 <td colspan="5" class="text-center">No students found.</td>
                             </tr>
