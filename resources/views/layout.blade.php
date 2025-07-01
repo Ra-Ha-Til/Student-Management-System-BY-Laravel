@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootsrap-4 -->
+    <!-- Bootstrap-4 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -50,7 +50,7 @@
             height: 1000px;
         }
 
-        /* On screens that are less than 700px wide, make the sidebar into a topbar */
+        /* On screens that are less than 700px wide, make the sidebar into a top bar */
         @media screen and (max-width: 700px) {
             .sidebar {
                 width: 100%;
@@ -107,7 +107,7 @@
                 <!-- The sidebar -->
                 <div class="sidebar">
                     <a class="active" href="#home">Home</a>
-                    <a href="#news">Stydent</a>
+                    <a href="#news">Student</a>
                     <a href="#contact">Teacher</a>
                     <a href="#about">Courses</a>
                     <a href="#about">Enrollment</a>
@@ -115,9 +115,9 @@
                 </div>
             </div>
             <div class="col-md-9">
-                <div class="content">
-                    @yield('content')
-                </div>
+
+
+                @yield('content')
 
             </div>
 
