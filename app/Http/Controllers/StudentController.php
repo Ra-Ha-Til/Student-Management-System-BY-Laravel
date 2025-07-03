@@ -43,8 +43,8 @@ class StudentController extends Controller
      */
     public function show(string $id): View
     {
-        $student = Student::find($id);
-        return view('students.show')->with('students', $student);
+        $students = Student::find($id);
+        return view('students.show')->with('students', $students);
     }
 
     /**
@@ -52,8 +52,8 @@ class StudentController extends Controller
      */
     public function edit(string $id): View
     {
-        $student = Student::findOrFail($id);
-        return view('students.edit')->with('student', $student);
+        $students = Student::findOrFail($id);
+        return view('students.edit')->with('student', $students);
     }
 
     /**
