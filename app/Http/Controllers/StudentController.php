@@ -59,23 +59,17 @@ class StudentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id): RedirectResponse
+    public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'address' => 'required|string|max:255',
-            // 'mobile' => 'nullable|string|max:20'
-        ]);
+        $students = Student::findOrFail($id);
 
-        $student = Student::findOrFail($id);
-        $student->update([
-            'name' => $request->name,
-            'address' => $request->address,
-            // 'mobile' => $request->mobile
-        ]);
+        $input = $request->all(); // get all fields
+
+        $students->update($input);
 
         return redirect('students')->with('flash_message', 'Student Updated!');
     }
+
 
     /**
      * Remove the specified resource from storage.
