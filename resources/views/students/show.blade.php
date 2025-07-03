@@ -8,5 +8,7 @@
             <p class="card-text">Address:{{ $students->address }}</p>
             <p class="card-text">Mobile:{{ $students->mobile }}</p>
         </div>
+        </hr>
     </div>
 </div>
+@endsection
