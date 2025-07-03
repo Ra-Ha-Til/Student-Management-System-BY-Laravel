@@ -4,20 +4,20 @@
     <div class="card-header">Edit Page</div>
     <div class="card-body">
 
-        <form action="{{ route('students.update', $students->id) }}" method="POST">
+        <form action="{{ route('courses.update', $courses->id) }}" method="POST">
             @csrf
             @method("PATCH")
 
-            <input type="hidden" name="id" value="{{ $students->id }}">
+            <input type="hidden" name="id" value="{{ $courses->id }}">
 
             <label>Name</label><br>
-            <input type="text" name="name" value="{{ $students->name }}" class="form-control"><br>
+            <input type="text" name="name" value="{{ $courses->name }}" class="form-control"><br>
 
-            <label>Address</label><br>
-            <input type="text" name="address" value="{{ $students->address }}" class="form-control"><br>
+            <label>Syllabus</label><br>
+            <input type="text" name="address" value="{{ $courses->address }}" class="form-control"><br>
 
-            <label>Mobile</label><br>
-            <input type="text" name="mobile" value="{{ $students->mobile }}" class="form-control"><br>
+            <label>Duration</label><br>
+            <input type="text" name="mobile" value="{{ $courses->mobile }}" class="form-control"><br>
 
             <input type="submit" value="Update" class="btn btn-success"><br>
         </form>
