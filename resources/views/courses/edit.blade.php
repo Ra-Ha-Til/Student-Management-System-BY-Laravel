@@ -14,10 +14,10 @@
             <input type="text" name="name" value="{{ $courses->name }}" class="form-control"><br>
 
             <label>Syllabus</label><br>
-            <input type="text" name="address" value="{{ $courses->address }}" class="form-control"><br>
+            <input type="text" name="address" value="{{ $courses->syllabus }}" class="form-control"><br>
 
             <label>Duration</label><br>
-            <input type="text" name="mobile" value="{{ $courses->mobile }}" class="form-control"><br>
+            <input type="text" name="mobile" value="{{ $courses->duration }}" class="form-control"><br>
 
             <input type="submit" value="Update" class="btn btn-success"><br>
         </form>
