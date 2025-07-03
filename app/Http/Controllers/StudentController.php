@@ -16,7 +16,7 @@ class StudentController extends Controller
     public function index(): View
     {
         $students = Student::all(); // fetch all students from DB
-        return view('students.index', compact('students'));
+        return view('students.index')->with('students', $students);
     }
 
     /**
@@ -32,19 +32,9 @@ class StudentController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'address' => 'required|string|max:255',
-            'age' => 'required|integer|min:1',
-        ]);
-
-        Student::create([
-            'name' => $request->name,
-            'address' => $request->address,
-            'age' => $request->age,
-        ]);
-
-        return redirect()->route('students.index')->with('flash_message', 'Student Added!');
+        $input = $request->all();
+        Student::create($input);
+        return redirect('students')->with('flash_message', 'Student Added!');
     }
 
 

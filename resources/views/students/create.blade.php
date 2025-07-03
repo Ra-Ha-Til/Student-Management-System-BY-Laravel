@@ -5,18 +5,16 @@
     <div class="card-header">Students Page</div>
     <div class="card-body">
         <form action="{{ url('students') }}" method="POST">
-            @csrf
+            {!! csrf_field() !!}
+            <label>Name</label><br />
+            <input type="text" name="name" id="name" class="form-control"></br>
+            <label>Address</label><br />
+            <input type="text" name="address" id="address" class="form-control"></br>
+            <label>Mobile</label><br />
+            <input type="text" name="mobile" id="mobile" class="form-control"></br>
 
-            <input type="text" name="name" placeholder="Enter name" required>
-            <input type="text" name="address" placeholder="Enter address" required>
+            <input type="Submit" value="Save" class="btn btn-success"></br> <!-- For Adding Submit button -->
 
-            <!-- ✅ Add this for age -->
-            <input type="number" name="age" placeholder="Enter age" required>
-
-            <!-- optional: mobile -->
-            <!-- <input type="text" name="mobile" placeholder="Enter mobile"> -->
-
-            <button type="submit">Submit</button>
         </form>
 
     </div>
