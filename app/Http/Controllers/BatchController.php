@@ -34,7 +34,7 @@ class BatchController extends Controller
     {
         $input = $request->all();
         Batch::create($input);
-        return redirect('batch')->with('flash_message', 'Batch Added!');
+        return redirect('batches')->with('flash_message', 'Batch Added!');
     }
 
     /**
@@ -63,7 +63,7 @@ class BatchController extends Controller
         $batches = Batch::findOrFail($id);
         $input = $request->all(); // get all fields
         $batches->update($input);
-        return redirect('batch')->with('flash_message', 'Batch Updated!');
+        return redirect('batches')->with('flash_message', 'Batch Updated!');
     }
 
     /**

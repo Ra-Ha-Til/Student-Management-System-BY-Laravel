@@ -13,11 +13,11 @@
             <label>Name</label><br>
             <input type="text" name="name" value="{{ $batches->name }}" class="form-control"><br>
 
-            <label>Syllabus</label><br>
-            <input type="text" name="syllabus" value="{{ $batches->course_id }}" class="form-control"><br>
+            <label>Course</label><br>
+            <input type="text" name="course_id" value="{{ $batches->course_id }}" class="form-control"><br>
 
             <label>Start Date</label><br>
-            <input type="text" name="duration" value="{{ $batches->start_date }}" class="form-control"><br>
+            <input type="text" name="start_date" value="{{ $batches->start_date }}" class="form-control"><br>
 
             <input type="submit" value="Update" class="btn btn-success"><br>
         </form>
