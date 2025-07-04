@@ -14,8 +14,8 @@ class CourseCOntroller extends Controller
      */
     public function index()
     {
-        $courses = Course::all(); // fetch all courses from DB
-        return view('courses.index')->with('courses', $courses);
+        $courses = Course::all();  // Make sure it fetches all fields
+        return view('courses.index', compact('courses'));
     }
 
     /**

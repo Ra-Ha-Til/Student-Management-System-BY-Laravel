@@ -27,26 +27,26 @@
                 </thead>
                 <tbody>
                     @if ($courses->count() > 0)
-                    @foreach ($courses as $item)
+                    @foreach ($courses as $course)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $item->name }}</td>
-                        <td>{{ $item->syllabus }}</td>
-                        <td>{{ $item->duration}}</td>
+                        <td>{{ $course->name }}</td>
+                        <td>{{ $course->syllabus }}</td>
+                        <td>{{ $course->duration}}</td>
                         <td>
-                            <a href="{{ url('/courses/' . $item->id) }}" title="View Course">
+                            <a href="{{ url('/courses/' . $course->id) }}" title="View Course">
                                 <button class="btn btn-info btn-sm">
                                     <i class="fa fa-eye" aria-hidden="true"></i> View
                                 </button>
                             </a>
 
-                            <a href="{{ url('/courses/' . $item->id . '/edit') }}" title="Edit Course">
+                            <a href="{{ url('/courses/' . $course->id . '/edit') }}" title="Edit Course">
                                 <button class="btn btn-primary btn-sm">
                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
                                 </button>
                             </a>
 
-                            <form method="POST" action="{{ url('/courses/' . $item->id) }}" accept-charset="UTF-8"
+                            <form method="POST" action="{{ url('/courses/' . $course->id) }}" accept-charset="UTF-8"
                                 style="display:inline"
                                 onsubmit="return confirm('Are you sure you want to delete this Course?');">
                                 {{ method_field('DELETE') }}
