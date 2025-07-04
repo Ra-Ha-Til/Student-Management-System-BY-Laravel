@@ -1,0 +1,23 @@
+@extends('layout')
+
+@section('content')
+<div class="card">
+    <div class="card-header">Batches</div>
+    <div class="card-body">
+        <form action="{{ url('batches') }}" method="POST">
+            {!! csrf_field() !!}
+            <label>Batch Name</label><br />
+            <input type="text" name="name" id="name" class="form-control"></br>
+            <label>Syllabus</label><br />
+            <input type="text" name="syllabus" id="course_id" class="form-control"></br>
+            <label>Start Date</label><br />
+            <input type="text" name="duration" id="start_date" class="form-control"></br>
+
+            <input type="Submit" value="Save" class="btn btn-success"></br> <!-- For Adding Submit button -->
+
+        </form>
+
+    </div>
+</div>
+
+@stop
