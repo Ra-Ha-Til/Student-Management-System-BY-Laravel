@@ -110,6 +110,7 @@
                     <a href="{{ url('/students') }}">Student</a>
                     <a href="{{ url('/teachers') }}">Teacher</a>
                     <a href="{{ url('/courses') }}">Course</a>
+                    <a href="{{ url('/batches') }}">Batches</a>
                     <a href="{{ url('/students') }}">Enrollment</a>
                     <a href={{ url('/students') }}">Payment</a>
                 </div>
