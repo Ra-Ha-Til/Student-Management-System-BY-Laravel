@@ -30,7 +30,7 @@
                     @foreach ($batches as $course)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-
+                        <td>{{ $course->name }}</td>
                         <td>{{ $course->course_id }}</td>
                         <td>{{ $course->start_date}}</td>
                         <td>

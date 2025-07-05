@@ -13,8 +13,8 @@ class PaymentController extends Controller
      */
     public function index()
     {
-        $enrollments = Enrollment::all();  // Make sure it fetches all fields
-        return view('enrollments.index', compact('enrollments'));
+        $payments = Payment::all();  // Make sure it fetches all fields
+        return view('payments.index', compact('payments'));
     }
 
     /**

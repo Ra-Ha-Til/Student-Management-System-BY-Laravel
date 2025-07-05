@@ -12,8 +12,8 @@
 
             <label>Enrollment No</label><br>
             <select name="enrollment_id" id="enrollment_id" class="form-control">
-                @foreach($payments as $id => $enroll_no)
-                <option value="{{ $id }}">{{ $enroll_no }}</option>
+                @foreach($payments as $id => $enrollment_id)
+                    <option value="{{ $id }}">{{ $enrollment_id }}</option>
                 @endforeach
 
                 <label>Paid Date</label><br>
