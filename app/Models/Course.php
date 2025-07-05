@@ -10,4 +10,10 @@ class Course extends Model
     protected $primaryKey = 'id';
     protected $fillable = ['name', 'syllabus', 'duration'];
     use HasFactory;
+    public function getFormattedDuration()
+    {
+        return $this->duration . ' months';
+    }
+
+
 }

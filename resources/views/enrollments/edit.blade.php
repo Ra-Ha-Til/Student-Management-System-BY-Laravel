@@ -4,22 +4,29 @@
     <div class="card-header">Edit Page</div>
     <div class="card-body">
 
-        <form action="{{ route('courses.update', $courses->id) }}" method="POST">
+        <form action="{{ route('enrollments.update', $enrollments->id) }}" method="POST">
             @csrf
             @method("PATCH")
 
-            <input type="hidden" name="id" value="{{ $courses->id }}">
+            <input type="hidden" name="id" id="id" value="{{ $enrollments->id }}" id="id">
 
-            <label>Name</label><br>
-            <input type="text" name="name" value="{{ $courses->name }}" class="form-control"><br>
 
-            <label>Syllabus</label><br>
-            <input type="text" name="syllabus" value="{{ $courses->syllabus }}" class="form-control"><br>
-
-            <label>Duration</label><br>
-            <input type="text" name="duration" value="{{ $courses->duration }}" class="form-control"><br>
-
+            <label>Enroll No</label><br />
+            <input type="text" name="enroll_no" id="enroll_no" class="form-control"
+                value="{{ $enrollments->enroll_no }}"></br>
+            <label>Batch</label><br />
+            <input type="text" name="batch_id" id="batch_id" class="form-control"
+                value="{{ $enrollments->batch_id }}"></br>
+            <label>Student</label><br />
+            <input type="text" name="student_id" id="student_id" class="form-control"
+                value="{{ $enrollments->student_id }}"></br>
+            <label>Join Date</label><br />
+            <input type="text" name="join_date" id="join_date" class="form-control"
+                value="{{ $enrollments->join_date }}"></br>
+            <label>Fee</label><br />
+            <input type="text" name="fee" id="fee" class="form-control" value="{{ $enrollments->fee }}"></br>
             <input type="submit" value="Update" class="btn btn-success"><br>
+
         </form>
 
     </div>
