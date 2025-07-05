@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Payment;
+use App\Models\Enrollment;
 
 class PaymentController extends Controller
 {
@@ -12,8 +13,8 @@ class PaymentController extends Controller
      */
     public function index()
     {
-        $payments = Payment::all();  // Make sure it fetches all fields
-        return view('payments.index', compact('payments'));
+        $enrollments = Enrollment::all();  // Make sure it fetches all fields
+        return view('enrollments.index', compact('enrollments'));
     }
 
     /**
