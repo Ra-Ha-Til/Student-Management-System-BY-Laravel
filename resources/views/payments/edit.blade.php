@@ -4,22 +4,25 @@
     <div class="card-header">Edit Page</div>
     <div class="card-body">
 
-        <form action="{{ route('students.update', $students->id) }}" method="POST">
+        <form action="{{ route('payments.update', $payments->id) }}" method="POST">
             @csrf
             @method("PATCH")
 
-            <input type="hidden" name="id" value="{{ $students->id }}">
+            <input type="hidden" name="id" value="{{ $payments->id }}">
 
-            <label>Name</label><br>
-            <input type="text" name="name" value="{{ $students->name }}" class="form-control"><br>
+            <label>Enrollment No</label><br>
+            <select name="enrollment_id" id="enrollment_id" class="form-control">
+                @foreach($payments as $id => $enroll_no)
+                <option value="{{ $id }}">{{ $enroll_no }}</option>
+                @endforeach
 
-            <label>Address</label><br>
-            <input type="text" name="address" value="{{ $students->address }}" class="form-control"><br>
+                <label>Paid Date</label><br>
+                <input type="text" name="paid_date" value="{{ $payments->paid_date }}" class="form-control"><br>
 
-            <label>Mobile</label><br>
-            <input type="text" name="mobile" value="{{ $students->mobile }}" class="form-control"><br>
+                <label>Amount</label><br>
+                <input type="text" name="amount" value="{{ $payments->amount}}" class="form-control"><br>
 
-            <input type="submit" value="Update" class="btn btn-success"><br>
+                <input type="submit" value="Update" class="btn btn-success"><br>
         </form>
 
     </div>

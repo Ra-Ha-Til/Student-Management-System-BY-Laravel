@@ -6,7 +6,7 @@
     <div class="card-body">
         <form action="{{ url('batches') }}" method="POST">
             {!! csrf_field() !!}
-            <label>Enrollment NO</label><br />
+            <label>Enrollment No</label><br />
             <select name="enrollment_id" id="enrollment_id" class=" from-control">
                 @foreach($payments as $id => $enroll_no)
                 <option value="{{ $id }}"> {{ $enroll_no }}</option>

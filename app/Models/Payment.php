@@ -13,9 +13,9 @@ class Payment extends Model
     use HasFactory;
 
 
-    public function payment()
+    public function enrollment()
     {
-        return $this->belongsTo(Payment::class);
+        return $this->belongsTo(Enrollment::class);
     }
 
 }

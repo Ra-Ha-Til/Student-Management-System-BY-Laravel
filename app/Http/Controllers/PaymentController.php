@@ -53,6 +53,7 @@ class PaymentController extends Controller
     public function edit(string $id)
     {
         $payments = Payment::find($id);
+        $enrollments = Enrollment::pluck('enroll_no', 'id');
         return view('payments.edit')->with('payments', $payments);
     }
 

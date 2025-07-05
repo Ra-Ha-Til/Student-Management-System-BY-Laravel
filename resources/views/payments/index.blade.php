@@ -19,9 +19,9 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Name</th>
-                        <th>Address</th>
-                        <th>Mobile</th>
+                        <th>Enrollment No</th>
+                        <th>Paid Date</th>
+                        <th>Amount</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -31,16 +31,17 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->name }}</td>
-                        <td>{{ $item->address }}</td>
-                        <td>{{ $item->mobile}}</td>
+                        <td>{{ $item->enrollment->enroll_no }}</td>
+                        <td>{{ $item->paid_date}}</td>
+                        <td>{{ $item->amount}}</td>
                         <td>
-                            <a href="{{ url('/students/' . $item->id) }}" title="View Student">
+                            <a href="{{ url('/payments/' . $item->id) }}" title="View Student">
                                 <button class="btn btn-info btn-sm">
                                     <i class="fa fa-eye" aria-hidden="true"></i> View
                                 </button>
                             </a>
 
-                            <a href="{{ url('/students/' . $item->id . '/edit') }}" title="Edit Student">
+                            <a href="{{ url('/payments/' . $item->id . '/edit') }}" title="Edit Student">
                                 <button class="btn btn-primary btn-sm">
                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
                                 </button>
